@@ -22,8 +22,11 @@ class App extends Component {
   }
 
   renderPosts() {
-    return _.map(this.props.posts, (post, key) => {
-      return <PostItem key={key} post={post} id={key} />
+    return _.map(this.props.posts.contacts, (post, key) => {
+      console.log('--------------------');
+      console.log(post);
+      //return <PostItem key={key} post={post} id={key} />
+      //return <PostItem key={key} post={post} id={key} />
     });
   }
 
