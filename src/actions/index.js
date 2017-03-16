@@ -6,7 +6,7 @@ import {
   CREATE_POST
 } from './types';
 
-const Posts = new Firebase('https://mycontacts-appdave.firebaseio.com/');
+const Posts = new Firebase('https://git-library-4d56b.firebaseio.com/');
 
 export function fetchPosts() {
   return dispatch => {

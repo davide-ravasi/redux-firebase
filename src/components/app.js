@@ -2,27 +2,18 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import MenuTop from  './menu_top';
 import PostItem from './post_item';
+import EditForm from './edit_form';
 
 class App extends Component {
-  state = { post: '' };
 
   componentWillMount() {
     this.props.fetchPosts();
   }
 
-  handleInputChange(event) {
-    this.setState({ post: event.target.value });
-  }
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-
-    this.props.createPost(this.state.post)
-  }
-
   renderPosts() {
-    return _.map(this.props.posts.contacts, (post, key) => {
+    return _.map(this.props.posts, (post, key) => {
       console.log('--------------------');
       console.log(post);
       //return <PostItem key={key} post={post} id={key} />
@@ -33,20 +24,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h4>Create a Post</h4>
-        <form onSubmit={this.handleFormSubmit.bind(this)} className="form-inline">
-          <div className="form-group">
-            <input
-              className="form-control"
-              placeholder="Add a post"
-              value={this.state.post}
-              onChange={this.handleInputChange.bind(this)} />
-            <button action="submit" className="btn btn-primary">Create Post</button>
+        <MenuTop />
+        <div className="container" role="Main">
+          <div className="page-header">
+            <h1>Command list</h1>
           </div>
-        </form>
-        <ul className="list-group">
-          {this.renderPosts()}
-        </ul>
+          <ul className="list-group">
+            {this.renderPosts()}
+          </ul>
+        </div>
+        <EditForm />
       </div>
     );
   }
