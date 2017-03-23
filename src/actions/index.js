@@ -20,6 +20,7 @@ export function fetchPosts() {
 }
 
 export function createPost(post) {
+  console.log(post);
   return dispatch => Posts.push(post);
 }
 

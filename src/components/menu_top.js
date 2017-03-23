@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { Link } from 'react-router';
 
 class MenuTop extends Component {
     render() {
@@ -18,9 +19,9 @@ class MenuTop extends Component {
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                     <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#about">Edit</a></li>
-                        <li><a href="#contact">List</a></li>
+                        <li className="active"><Link to="/">Home</Link></li>
+                        <li><Link to="/edit">Edit</Link></li>
+                        <li><Link to="/">List</Link></li>
                     </ul>
                     </div>
                 </div>

@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import { reduxForm } from 'redux-form';
+import { createPost } from '../actions/index';
 
-class EditForm extends Component {
-
-  state = { post: '' };
-
-  handleInputChange(event) {
-    this.setState({ post: event.target.value });
-  }
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-
-    this.props.createPost(this.state.post)
-  }
-
+class PostsNew extends Component {
   render() {
-      return (
-        <form onSubmit={this.handleFormSubmit.bind(this)} className="form-inline formProv">
+    const { fields: { command, category, description, options }, handleSubmit } = this.props;
+    return (
+        <form onSubmit={ handleSubmit(this.props.createPost)}> 
+          <h3>create new post</h3>
           <div className="form-group">
-            <input
-              className="form-control"
-              placeholder="Add a post"
-              value={this.state.post}
-              onChange={this.handleInputChange.bind(this)} />
-            <button action="submit" className="btn btn-primary">Create Post</button>
+            <label>Command</label>
+            <input type="text" className="form-control" {...command} />          
           </div>
+
+          <div className="form-group">
+            <label>Category</label>
+            <input type="text" className="form-control" {...category} />          
+          </div>
+
+          <div className="form-group">
+            <label>Description</label>
+            <textarea className="form-control" {...description} />          
+          </div>
+
+          <div className="form-group">
+            <label>Options</label>
+            <textarea className="form-control" {...options} />          
+          </div>
+
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
-      );
+    );
   }
 }
 
-export default connect(null, actions)(EditForm);
+export default reduxForm({
+  form: 'PostsNewForm',
+  fields: ['command','category','description','options']
+}, null, { createPost })(PostsNew);
 
 

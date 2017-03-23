@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import MenuTop from  './menu_top';
 import PostItem from './post_item';
-import EditForm from './edit_form';
+import PostsNew from './edit_form';
+
 
 class App extends Component {
 
@@ -25,15 +26,9 @@ class App extends Component {
     return (
       <div>
         <MenuTop />
-        <div className="container" role="Main">
-          <div className="page-header">
-            <h1>Command list</h1>
-          </div>
-          <ul className="list-group">
-            {this.renderPosts()}
-          </ul>
+        <div className="container">
+            {this.props.children}
         </div>
-        <EditForm />
       </div>
     );
   }
