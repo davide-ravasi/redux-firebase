@@ -13,15 +13,6 @@ class App extends Component {
     this.props.fetchPosts();
   }
 
-  renderPosts() {
-    return _.map(this.props.posts, (post, key) => {
-      console.log('--------------------');
-      console.log(post);
-      //return <PostItem key={key} post={post} id={key} />
-      //return <PostItem key={key} post={post} id={key} />
-    });
-  }
-
   render() {
     return (
       <div>

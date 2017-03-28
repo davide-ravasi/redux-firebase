@@ -5,10 +5,18 @@ import * as actions from '../actions';
 class PostList extends Component {
 
   renderPosts() {
-    return _.map(this.props.posts, (post, key) => {
+    var ObjByCategory = _.chain(this.props.posts)
+                          .groupBy('category')
+                          .pairs()    
+                          .map(function (currentItem) {
+                              return _.object(_.zip(["type", "elements"], currentItem));
+                          })
+                          .value();
+    console.log(ObjByCategory);
+
+    /*return _.map(ObjByCategory, (post, key) => {
       console.log('--------------------');
       console.log(post);
-      //return <PostItem key={key} post={post} id={key} />
       //return <PostItem key={key} post={post} id={key} />
       return (
         <div  className="post-list"> 
@@ -17,7 +25,7 @@ class PostList extends Component {
           <p>{post.description}</p>
         </div>
       )
-    });
+    });*/
   }
 
   render() {
