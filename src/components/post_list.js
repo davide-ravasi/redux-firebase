@@ -4,6 +4,18 @@ import * as actions from '../actions';
 
 class PostList extends Component {
 
+  singleCommand(el) {
+       console.log(el);
+       return _.map(el, ( command, key ) => {
+         return (
+           <div className="post-list">
+             <h4>{command.command}</h4>
+             <p>{command.description}</p>
+           </div>
+         )
+       });
+  }
+
   renderPosts() {
     var ObjByCategory = _.chain(this.props.posts)
                           .groupBy('category')
@@ -12,20 +24,16 @@ class PostList extends Component {
                               return _.object(_.zip(["type", "elements"], currentItem));
                           })
                           .value();
-    console.log(ObjByCategory);
 
-    /*return _.map(ObjByCategory, (post, key) => {
-      console.log('--------------------');
-      console.log(post);
+  return _.map(ObjByCategory, (post, key) => {
       //return <PostItem key={key} post={post} id={key} />
       return (
-        <div  className="post-list"> 
-          <span className="label label-primary pull-right">{post.category}</span>
-          <h4>{post.command}</h4>
-          <p>{post.description}</p>
+        <div  className="post-block"> 
+          <h3>{post.type}</h3>
+            {this.singleCommand(post.elements)}
         </div>
       )
-    });*/
+    });
   }
 
   render() {
