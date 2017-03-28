@@ -7,7 +7,7 @@ class PostsNew extends Component {
     const { fields: { command, category, description, options }, handleSubmit } = this.props;
     return (
         <form onSubmit={ handleSubmit(this.props.createPost)}> 
-          <h3>create new post</h3>
+          <h3>Create new post</h3>
           <div className="form-group">
             <label>Command</label>
             <input type="text" className="form-control" {...command} />          

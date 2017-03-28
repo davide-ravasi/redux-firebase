@@ -1,2 +1,19 @@
 formProv {display: none;}
 .navbar + .container {margin-top: 70px;}
+
+.post-list {
+    background: #eee;
+    border: solid 1px #ccc;
+    box-shadow: 0px 2px 5px #CCC;
+    -moz-box-shadow: 0px 2px 5px #ccc;
+    -webkit-box-shadow: 0px 2px 5px #CCC;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.post-list .label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
