@@ -28,3 +28,10 @@ export function deletePost(key) {
   console.log(key);
   return dispatch => Posts.child(key).remove();
 }
+
+// to do
+// 1- modify action
+// 2- hide/show command
+// 3- category select list
+// 4- styles boxes with colors
+// 5- active/selected on menu

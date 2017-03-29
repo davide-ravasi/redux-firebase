@@ -1,6 +1,10 @@
 formProv {display: none;}
 .navbar + .container {margin-top: 70px;}
 
+.post-block {
+    margin-bottom: 50px;
+}
+
 .post-list {
     background: #eee;
     border: solid 1px #ccc;
@@ -14,6 +18,13 @@ formProv {display: none;}
 
 .post-list .btn-danger {
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 10px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.post-list:hover .btn-danger {
+    top: 10px;
+    opacity: 1;
 }

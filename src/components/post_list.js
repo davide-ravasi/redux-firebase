@@ -13,8 +13,7 @@ class PostList extends Component {
       });
   }
 
-  renderPosts() {
-    
+  renderPosts() {    
     var ObjByCategory = _.chain(this.props.posts)
                       .forEach(function(value, key) {
                         value['key'] = key;
