@@ -5,8 +5,6 @@ import PostItem from './post_item';
 
 class PostList extends Component {
 
-
-
   singleCommand(el) {
       return _.map(el, ( command, key ) => {
         return (

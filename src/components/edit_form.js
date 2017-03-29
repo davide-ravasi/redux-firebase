@@ -1,12 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
 
 class PostsNew extends Component {
+
+  static contextTypes = {
+		router: PropTypes.object
+	};
+
+  onSend(props) {
+    this.props.createPost(props)
+      .then(() => {
+        // blog post has been created, navigate the user to the index
+        // we navigate by calling this.context.router.push with the
+        // new path naviagte to
+        // PUSH is a method of redux router
+        this.context.router.push('/');
+      });
+  }
+
   render() {
     const { fields: { command, category, description, options }, handleSubmit } = this.props;
+
+
     return (
-        <form onSubmit={ handleSubmit(this.props.createPost)}> 
+        <form onSubmit={ handleSubmit(this.onSend.bind(this)) }> 
           <h3>Create new post</h3>
           <div className="form-group">
             <label>Command</label>
