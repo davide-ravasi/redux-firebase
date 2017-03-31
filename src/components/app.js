@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import MenuTop from  './menu_top';
 import PostItem from './post_item';
-import PostsNew from './edit_form';
+import PostsNew from './create_form';
 
 
 class App extends Component {

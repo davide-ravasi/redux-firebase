@@ -16,7 +16,7 @@ formProv {display: none;}
     position: relative;
 }
 
-.post-list .btn-danger {
+.post-list .btn-danger, .post-list .btn-primary {
     position: absolute;
     top: 0px;
     right: 10px;
@@ -24,7 +24,11 @@ formProv {display: none;}
     transition: all 0.5s;
 }
 
-.post-list:hover .btn-danger {
+.post-list:hover .btn-danger, .post-list:hover .btn-primary  {
     top: 10px;
     opacity: 1;
+}
+
+.post-list:hover .btn-primary {
+    right: 40px;
 }

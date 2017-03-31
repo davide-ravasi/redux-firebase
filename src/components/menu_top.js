@@ -20,7 +20,7 @@ class MenuTop extends Component {
                     <div id="navbar" className="collapse navbar-collapse">
                     <ul className="nav navbar-nav">
                         <li className="active"><Link to="/">Home</Link></li>
-                        <li><Link to="/edit">Edit</Link></li>
+                        <li><Link to="/create">Edit</Link></li>
                         <li><Link to="/">List</Link></li>
                     </ul>
                     </div>
