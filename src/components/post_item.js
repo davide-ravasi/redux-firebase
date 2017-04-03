@@ -15,9 +15,10 @@ class PostItem extends Component {
   render() {
     return (
       <div className="post-list" >
-        <button className="btn btn-primary btn-xs" onClick={this.retrieveElement.bind(this)}>M</button>
-        <Link className="btn btn-primary btn-xs" to={'/modif/' + this.props.id}>M</Link>
-        <button className="btn btn-danger btn-xs" onClick={this.removeElement.bind(this)}>X</button>
+        <button className="btn btn-primary btn-xs" onClick={this.retrieveElement.bind(this)}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        <button className="btn btn-danger btn-xs" onClick={this.removeElement.bind(this)}>
+          <i className="fa fa-times" aria-hidden="true"></i>
+        </button>
         <h4>{this.props.post.command}</h4>
         <p>{this.props.post.description}</p>
       </div>     

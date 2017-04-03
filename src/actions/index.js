@@ -41,12 +41,12 @@ export function retrievePost(key) {
 }
 
 // to do
-// 1- modify action
-// 2- hide/show command
-// 3- category select list
-// 4- styles boxes with colors
-// 5- active/selected on menu
-// 6- authentification
-// 7- add errors on validation
-// 8- convert redux-form version to 6
+// 1-  modify action
+// 2-  hide/show command
+// 3-  category select list
+// 4-  styles boxes with colors
+// 5-  authentification
+// 6-  add errors on validation
+// 7-  update modified object
+// 8-  cancel button in form
 

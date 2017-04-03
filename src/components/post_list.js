@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import PostItem from './post_item';
+import { Accordion, Panel } from 'react-bootstrap';
 
 class PostList extends Component {
 
@@ -28,19 +29,22 @@ class PostList extends Component {
   return _.map(ObjByCategory, (post, key) => {
       //return <PostItem key={key} post={post} id={key} />
       return (
-        <div  className="post-block" key={post.type}> 
-          <h3>{post.type} ({post.elements.length})</h3>
+        /*<div  className="post-block" key={post.type}> 
+          <h3>{post.type} ({post.elements.length})  <span>+</span></h3>
             {this.singleCommand(post.elements)}
-        </div>
+        </div>*/
+        <Panel header={post.type + ' (' + post.elements.length + ')'} eventKey={key}>
+          {this.singleCommand(post.elements)}         
+        </Panel>
       )
     });
   }
 
   render() {
     return (
-      <div>
+      <Accordion>
         {this.renderPosts()}
-      </div>
+      </Accordion>
     );
   }
 }

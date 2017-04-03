@@ -15,11 +15,10 @@ class MenuTop extends Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    <a className="navbar-brand" href="#">Git Library</a>
+                    <Link to="/" className="navbar-brand">Git Library</Link>
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                     <ul className="nav navbar-nav">
-                        <li className="active"><Link to="/">Home</Link></li>
                         <li><Link to="/create">Edit</Link></li>
                         <li><Link to="/">List</Link></li>
                     </ul>

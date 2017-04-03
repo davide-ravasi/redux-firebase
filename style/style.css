@@ -1,10 +1,6 @@
 formProv {display: none;}
 .navbar + .container {margin-top: 70px;}
 
-.post-block {
-    margin-bottom: 50px;
-}
-
 .post-list {
     background: #eee;
     border: solid 1px #ccc;
