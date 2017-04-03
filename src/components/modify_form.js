@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm} from 'redux-form';
 import { createPost } from '../actions/index';
 import { retrievePost } from '../actions/index';
 
@@ -9,10 +9,9 @@ class PostsNew extends Component {
         router: PropTypes.object
     };
   
-  componentWillMount() {
-    this.props.retrievePost(this.props.params.postId);    
+  componentDidMount() {
+    this.props.retrievePost(this.props.params.postId);  
   }
-
 
   onSend(props) {
     this.props.createPost(props)
@@ -28,7 +27,7 @@ class PostsNew extends Component {
   render() {
     const { fields: { command , category, description, options }, handleSubmit } = this.props;
     console.log('this props post');
-    console.log(this.props.post);
+    console.log(this.props);
 
     return (
         <form onSubmit={ handleSubmit(this.onSend.bind(this)) }> 
@@ -66,6 +65,10 @@ function mapStateToProps(state) {
 export default reduxForm({
   form: 'PostsNewForm',
   fields: ['command','category','description','options']
-}, mapStateToProps, { createPost, retrievePost })(PostsNew);
+},
+state => ({ // mapStateToProps
+  initialValues: state.post // will pull state into form's initialValues
+})
+, { createPost, retrievePost })(PostsNew);
 
 

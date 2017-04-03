@@ -47,3 +47,6 @@ export function retrievePost(key) {
 // 4- styles boxes with colors
 // 5- active/selected on menu
 // 6- authentification
+// 7- add errors on validation
+// 8- convert redux-form version to 6
+
