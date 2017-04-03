@@ -30,18 +30,14 @@ export function deletePost(key) {
 }
 
 export function retrievePost(key) {
-
   return dispatch => {
     Posts.on('value', snapshot => {
-      console.log('from dispatch');
-      console.log(snapshot.child(key).val());
       dispatch({
         type: RETRIEVE_POST,
         payload: snapshot.child(key).val()
       });
     });
   };
-
 }
 
 // to do

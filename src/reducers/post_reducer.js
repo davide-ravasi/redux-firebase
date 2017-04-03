@@ -1,14 +1,12 @@
 import _ from 'lodash';
 import {
-  RETRIEVE_POSTS
+  RETRIEVE_POST
 } from '../actions/types';
 
 export default function(state = {}, action) {
   switch (action.type) {
-    case RETRIEVE_POSTS:
-        console.log(action.payload);
+    case RETRIEVE_POST:
       return action.payload;
   }
-
   return state;
 }
