@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { reduxForm} from 'redux-form';
 import { modifyPost } from '../actions/index';
 import { retrievePost } from '../actions/index';
+import { Link } from 'react-router';
 
 class PostsNew extends Component {
 
@@ -49,6 +50,7 @@ class PostsNew extends Component {
           </div>
 
           <button type="submit" className="btn btn-primary">Submit</button>
+          <Link className="btn btn-danger" to="/">Cancel</Link>
         </form>
     );
   }

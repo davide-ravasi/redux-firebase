@@ -51,8 +51,7 @@ export function modifyPost(post, key) {
 // 2-  styles boxes with colors
 // 3-  authentification
 // 4-  add errors on validation
-// 5-  update modified object
-// 6-  cancel button in form
-// 7-  copy command to clipboard
-// 8-  add elements to notify the modification of the changement 
+// 5-  copy command to clipboard
+// 6-  add elements to notify the modification of the changement 
+// 7- sort categories in alphabetical order
 
