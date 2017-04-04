@@ -40,13 +40,19 @@ export function retrievePost(key) {
   };
 }
 
+export function modifyPost(post, key) {
+  console.log(post);
+  console.log(key);
+  return dispatch => Posts.child(key).update({"command":post.command});
+}
+
 // to do
-// 1-  modify action
-// 2-  hide/show command
-// 3-  category select list
-// 4-  styles boxes with colors
-// 5-  authentification
-// 6-  add errors on validation
-// 7-  update modified object
-// 8-  cancel button in form
+// 1-  category select list
+// 2-  styles boxes with colors
+// 3-  authentification
+// 4-  add errors on validation
+// 5-  update modified object
+// 6-  cancel button in form
+// 7-  copy command to clipboard
+// 8-  add elements to notify the modification of the changement 
 

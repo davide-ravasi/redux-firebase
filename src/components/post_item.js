@@ -8,14 +8,17 @@ class PostItem extends Component {
    this.props.deletePost(this.props.id);
   }
 
-  retrieveElement() {
-   this.props.retrievePost(this.props.id);
-  }
+  // retrieveElement() {
+  //  this.props.retrievePost(this.props.id);
+  // }
+  // <button className="btn btn-primary btn-xs" onClick={this.retrieveElement.bind(this)}>M</button>
 
   render() {
     return (
       <div className="post-list" >
-        <button className="btn btn-primary btn-xs" onClick={this.retrieveElement.bind(this)}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        <Link className="btn btn-primary btn-xs" to={'/modif/' + this.props.id}>
+          <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </Link>
         <button className="btn btn-danger btn-xs" onClick={this.removeElement.bind(this)}>
           <i className="fa fa-times" aria-hidden="true"></i>
         </button>

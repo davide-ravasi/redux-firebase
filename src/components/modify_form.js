@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm} from 'redux-form';
-import { createPost } from '../actions/index';
+import { modifyPost } from '../actions/index';
 import { retrievePost } from '../actions/index';
 
 class PostsNew extends Component {
@@ -14,12 +14,8 @@ class PostsNew extends Component {
   }
 
   onSend(props) {
-    this.props.createPost(props)
+    this.props.modifyPost(props,this.props.params.postId)
       .then(() => {
-        // blog post has been created, navigate the user to the index
-        // we navigate by calling this.context.router.push with the
-        // new path naviagte to
-        // PUSH is a method of redux router
         this.context.router.push('/');
       });
   }
@@ -69,6 +65,6 @@ export default reduxForm({
 state => ({ // mapStateToProps
   initialValues: state.post // will pull state into form's initialValues
 })
-, { createPost, retrievePost })(PostsNew);
+, { modifyPost, retrievePost })(PostsNew);
 
 
