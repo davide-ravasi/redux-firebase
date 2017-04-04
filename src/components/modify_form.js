@@ -23,8 +23,6 @@ class PostsNew extends Component {
 
   render() {
     const { fields: { command , category, description, options }, handleSubmit } = this.props;
-    console.log('this props post');
-    console.log(this.props);
 
     return (
         <form onSubmit={ handleSubmit(this.onSend.bind(this)) }> 

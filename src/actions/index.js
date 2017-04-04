@@ -41,8 +41,6 @@ export function retrievePost(key) {
 }
 
 export function modifyPost(post, key) {
-  console.log(post);
-  console.log(key);
   return dispatch => Posts.child(key).update({"command":post.command});
 }
 
@@ -53,5 +51,11 @@ export function modifyPost(post, key) {
 // 4-  add errors on validation
 // 5-  copy command to clipboard
 // 6-  add elements to notify the modification of the changement 
-// 7- sort categories in alphabetical order
+// 7-  sort categories in alphabetical order
+
+
+// copy to clipboard
+// https://github.com/nkbt/react-copy-to-clipboard
+// http://codepen.io/nkbt/pen/eNPoQv
+
 

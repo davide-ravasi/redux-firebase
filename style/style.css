@@ -1,12 +1,40 @@
+a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/*  --------
+    NAVBAR
+    --------
+*/ 
+
+.navbar-inverse {
+    background-color: #338efb;
+    border-color: transparent;
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
+}
+
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    color: #fff !important;
+}
+
 formProv {display: none;}
 .navbar + .container {margin-top: 70px;}
+
+.panel-default {
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
+    border-radius: 0 !important;
+    margin-bottom: 15px !important;
+}
 
 .post-list {
     background: #eee;
     border: solid 1px #ccc;
-    box-shadow: 0px 2px 5px #CCC;
-    -moz-box-shadow: 0px 2px 5px #ccc;
-    -webkit-box-shadow: 0px 2px 5px #CCC;
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
     padding: 20px;
     margin-bottom: 20px;
     position: relative;

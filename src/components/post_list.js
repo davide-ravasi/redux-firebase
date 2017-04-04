@@ -26,6 +26,7 @@ class PostList extends Component {
                       })
                       .value();
 
+
   return _.map(ObjByCategory, (post, key) => {
       //return <PostItem key={key} post={post} id={key} />
       return (
@@ -33,7 +34,7 @@ class PostList extends Component {
           <h3>{post.type} ({post.elements.length})  <span>+</span></h3>
             {this.singleCommand(post.elements)}
         </div>*/
-        <Panel header={post.type + ' (' + post.elements.length + ')'} eventKey={key}>
+        <Panel header={post.type + ' (' + post.elements.length + ')'} eventKey={key} key={key}>
           {this.singleCommand(post.elements)}         
         </Panel>
       )
