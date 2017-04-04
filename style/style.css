@@ -1,13 +1,21 @@
-a {
+h1, h2, h3, h4, p, a {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
+h1, h2, h3, h4 {
+    color: #000;
+    font-weight: 500;
+}
+
+p { 
+    color: #555; 
+    font-weight: 300;
+}
+
 /*  --------
     NAVBAR
-    --------
-*/ 
-
+    -------- */ 
 .navbar-inverse {
     background-color: #338efb;
     border-color: transparent;
@@ -23,6 +31,9 @@ a {
 formProv {display: none;}
 .navbar + .container {margin-top: 70px;}
 
+/*  ----------------
+    ACCORDION PANELS
+    ---------------- */
 .panel-default {
     -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
@@ -30,6 +41,9 @@ formProv {display: none;}
     margin-bottom: 15px !important;
 }
 
+/*  ----------------
+    ITEM BOX
+    ---------------- */
 .post-list {
     background: #eee;
     border: solid 1px #ccc;
