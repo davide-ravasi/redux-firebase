@@ -8,7 +8,6 @@ import PostList from './components/post_list';
 import PostsNew from './components/create_form';
 import PostMod from './components/modify_form';
 
-
 export default(
     <Route path="/" component={App}>
         <IndexRoute component={PostList} />

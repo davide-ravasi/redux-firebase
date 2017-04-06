@@ -9,6 +9,7 @@ import {
 
 const Posts = new Firebase('https://git-library-4d56b.firebaseio.com/');
 
+
 export function fetchPosts() {
   return dispatch => {
     Posts.on('value', snapshot => {
@@ -57,5 +58,4 @@ export function modifyPost(post, key) {
 // copy to clipboard
 // https://github.com/nkbt/react-copy-to-clipboard
 // http://codepen.io/nkbt/pen/eNPoQv
-
 
