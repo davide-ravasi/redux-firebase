@@ -1,4 +1,4 @@
-import Firebase from 'firebase';
+import firebase from 'firebase';
 import _ from 'lodash';
 import {
   FETCH_POSTS,
@@ -7,7 +7,22 @@ import {
   RETRIEVE_POST
 } from './types';
 
-const Posts = new Firebase('https://git-library-4d56b.firebaseio.com/');
+
+
+var config = {
+    apiKey: "AIzaSyDKOH7iAe8hD9wselYUrkzhp7MOAHgQ3vA",
+    authDomain: "git-library-4d56b.firebaseapp.com",
+    databaseURL: "https://git-library-4d56b.firebaseio.com",
+    projectId: "git-library-4d56b",
+    storageBucket: "git-library-4d56b.appspot.com",
+    messagingSenderId: "251723972885"
+
+};
+
+firebase.initializeApp(config);
+
+const Posts = firebase.database().ref();
+
 
 
 export function fetchPosts() {
