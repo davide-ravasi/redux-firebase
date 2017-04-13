@@ -44,6 +44,8 @@ formProv {display: none;}
 .panel-title a {
     text-transform: uppercase;
     font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /*  ----------------

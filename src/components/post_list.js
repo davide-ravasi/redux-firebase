@@ -34,7 +34,7 @@ class PostList extends Component {
           <h3>{post.type} ({post.elements.length})  <span>+</span></h3>
             {this.singleCommand(post.elements)}
         </div>*/
-        <Panel header={post.type + ' (' + post.elements.length + ')'} eventKey={key} key={key}>
+        <Panel header={post.type + ' (' + post.elements.length + ')'} eventKey={key} >
           {this.singleCommand(post.elements)}         
         </Panel>
       )

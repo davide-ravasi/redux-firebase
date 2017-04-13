@@ -7,8 +7,6 @@ import {
   RETRIEVE_POST
 } from './types';
 
-
-
 var config = {
     apiKey: "AIzaSyDKOH7iAe8hD9wselYUrkzhp7MOAHgQ3vA",
     authDomain: "git-library-4d56b.firebaseapp.com",
@@ -22,8 +20,6 @@ var config = {
 firebase.initializeApp(config);
 
 const Posts = firebase.database().ref();
-
-
 
 export function fetchPosts() {
   return dispatch => {
@@ -57,19 +53,18 @@ export function retrievePost(key) {
 }
 
 export function modifyPost(post, key) {
-  return dispatch => Posts.child(key).update({"command":post.command});
+  return dispatch => Posts.child(key).update({"command":post.command,"category":post.category,"description":post.description,"options":post.options});
 }
 
-// to do
+// to do -------------------------------------------------------
 // 1-  category select list
 // 2-  styles boxes with colors
-// 3-  authentification
+// 3-  authentication
 // 4-  add errors on validation
 // 5-  copy command to clipboard
 // 6-  add elements to notify the modification of the changement 
 // 7-  sort categories in alphabetical order
-
-
+// -------------------------------------------------------------
 // copy to clipboard
 // https://github.com/nkbt/react-copy-to-clipboard
 // http://codepen.io/nkbt/pen/eNPoQv
