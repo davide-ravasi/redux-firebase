@@ -44,7 +44,7 @@ class PostItem extends Component {
             onCopy={this.onCopy.bind(this)}>
             <i className="fa fa-clipboard"></i>
           </CopyToClipboard>
-          {this.state.copied ? <span className="label label-success">Copied.</span> : null}
+            <span className={"label label-success " + (this.state.copied ? 'active' : 'inactive')}>Copied</span>
         </h4>
         <p>{this.props.post.description}</p>
         <copyButton />        

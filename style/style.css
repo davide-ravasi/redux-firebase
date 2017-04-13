@@ -23,7 +23,6 @@ p {
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14) !important;
 }
 
-
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
     color: #fff !important;
 }
@@ -65,13 +64,24 @@ formProv {display: none;}
     display: inline-block;
     margin-left: 15px;
     font-size: 14px;
+    cursor: pointer; 
 }
 
-.post-list h4 .label {
+.post-list h4 .label { 
     display: inline-block;
     margin-left: 10px;
     font-size: 12px;
     font-weight: 300;   
+}
+
+.post-list h4 .label.inactive {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.post-list h4 .label.active {
+    opacity: 1; 
+    transition: opacity 0.5s;
 }
 
 .post-list .btn-danger, .post-list .btn-primary {

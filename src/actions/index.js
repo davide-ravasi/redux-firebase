@@ -21,6 +21,12 @@ firebase.initializeApp(config);
 
 const Posts = firebase.database().ref();
 
+const firebaseAuth = firebase.auth;
+
+export function login (email, pw) {
+ console.log(firebaseAuth().signInWithEmailAndPassword(email, pw))
+}
+
 export function fetchPosts() {
   return dispatch => {
     Posts.on('value', snapshot => {
