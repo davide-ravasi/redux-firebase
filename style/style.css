@@ -61,6 +61,19 @@ formProv {display: none;}
     position: relative;
 }
 
+.post-list h4 i {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.post-list h4 .label {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 300;   
+}
+
 .post-list .btn-danger, .post-list .btn-primary {
     position: absolute;
     top: 0px;

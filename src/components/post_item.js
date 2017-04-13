@@ -14,6 +14,11 @@ class PostItem extends Component {
 
   onCopy() {
     this.setState({copied: true});
+
+    setTimeout(() => {
+      console.log('start set time out');
+      this.setState({copied: false});
+    },1500);
   } 
 
   removeElement() {
@@ -36,13 +41,13 @@ class PostItem extends Component {
         </button>
         <h4>{this.props.post.command} 
           <CopyToClipboard text={this.props.post.command} 
-            onCopy={() => this.setState({copied: true})}>
-            <span> Copy </span>
+            onCopy={this.onCopy.bind(this)}>
+            <i className="fa fa-clipboard"></i>
           </CopyToClipboard>
-          {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+          {this.state.copied ? <span className="label label-success">Copied.</span> : null}
         </h4>
         <p>{this.props.post.description}</p>
-        <copyButton />
+        <copyButton />        
       </div>     
     )
   }

@@ -61,9 +61,8 @@ export function modifyPost(post, key) {
 // 2-  styles boxes with colors
 // 3-  authentication
 // 4-  add errors on validation
-// 5-  copy command to clipboard
-// 6-  add elements to notify the modification of the changement 
-// 7-  sort categories in alphabetical order
+// 5-  add elements to notify the modification of the changement 
+// 6-  sort categories in alphabetical order
 // -------------------------------------------------------------
 // copy to clipboard
 // https://github.com/nkbt/react-copy-to-clipboard
