@@ -7,29 +7,34 @@ import {
   RETRIEVE_POST
 } from './types';
 
-var config = {
+  var config = {
     apiKey: "AIzaSyDKOH7iAe8hD9wselYUrkzhp7MOAHgQ3vA",
     authDomain: "git-library-4d56b.firebaseapp.com",
     databaseURL: "https://git-library-4d56b.firebaseio.com",
     projectId: "git-library-4d56b",
     storageBucket: "git-library-4d56b.appspot.com",
     messagingSenderId: "251723972885"
-
-};
+  };
 
 firebase.initializeApp(config);
 
+
 const Posts = firebase.database().ref();
 
-// const firebaseAuth = firebase.auth;
+const firebaseAuth = firebase.auth;
 
-// export function login (email, pw) {
-//  return firebaseAuth().signInWithEmailAndPassword(email, pw)
-// }
+export function login (email, pw) {
+  console.log(firebaseAuth().signInWithEmailAndPassword(email, pw));
+ return firebaseAuth().signInWithEmailAndPassword(email, pw)
+}
 
 export function fetchPosts() {
+  console.log('start fetching');
+  console.log(Posts);
   return dispatch => {
     Posts.on('value', snapshot => {
+      console.log('snapshot posts');
+      console.log(snapshot.val());
       dispatch({
         type: FETCH_POSTS,
         payload: snapshot.val()

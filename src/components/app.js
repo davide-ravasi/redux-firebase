@@ -10,6 +10,7 @@ import PostsNew from './create_form';
 class App extends Component {
 
   componentWillMount() {
+    console.log('component mount');
     this.props.fetchPosts();
   }
 
