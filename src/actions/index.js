@@ -21,11 +21,11 @@ firebase.initializeApp(config);
 
 const Posts = firebase.database().ref();
 
-const firebaseAuth = firebase.auth;
+// const firebaseAuth = firebase.auth;
 
-export function login (email, pw) {
- console.log(firebaseAuth().signInWithEmailAndPassword(email, pw))
-}
+// export function login (email, pw) {
+//  return firebaseAuth().signInWithEmailAndPassword(email, pw)
+// }
 
 export function fetchPosts() {
   return dispatch => {

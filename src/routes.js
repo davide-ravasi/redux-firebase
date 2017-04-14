@@ -7,11 +7,13 @@ import MenuTop from  './components/menu_top';
 import PostList from './components/post_list';
 import PostsNew from './components/create_form';
 import PostMod from './components/modify_form';
+//import Login from './components/login';
 
 export default(
     <Route path="/" component={App}>
         <IndexRoute component={PostList} />
         <Route path="create" component={PostsNew} />
         <Route path="modif/(:postId)" component={PostMod} />
+        {/*<Route path="login" component={Login} />*/}
     </Route>
 )
