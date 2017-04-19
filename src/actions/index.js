@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 import _ from 'lodash';
+import { Link } from 'react-router';
 import {
   FETCH_POSTS,
   DELETE_POST,
@@ -18,14 +19,27 @@ import {
 
 firebase.initializeApp(config);
 
-
 const Posts = firebase.database().ref();
 
 const firebaseAuth = firebase.auth;
 
-export function login (email, pw) {
-  console.log(firebaseAuth().signInWithEmailAndPassword(email, pw));
- return firebaseAuth().signInWithEmailAndPassword(email, pw)
+export function login(email, pw) {
+  var connection = firebaseAuth().signInWithEmailAndPassword(email, pw);
+  return connection;
+}
+
+export function logout() {
+  return firebaseAuth().signOut(); 
+}
+
+export function isConnected() {
+     firebase.auth().onAuthStateChanged( user => {
+      if (!user) {
+        this.context.router.push('/login');
+      } else {
+        console.log('connected!!');
+      } 
+    }) 
 }
 
 export function fetchPosts() {

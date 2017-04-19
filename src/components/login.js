@@ -1,13 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import { login } from '../actions/index';
-
+import { login, logout, isConnected } from '../actions/index';
+import firebase from 'firebase';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {loginMessage: null};
+  }
+
+  static contextTypes = {
+      router: PropTypes.object
+  };
+
+  componentWillMount() {
+    firebase.auth().onAuthStateChanged( user => {
+      console.log('user : ', user);
+      if (user) {
+        console.log('connected');
+        this.context.router.push('/');
+      } else {
+        console.log('not connected');
+      }
+    }
+    )
   }
 
   setErrorMsg(error) {
@@ -21,6 +38,14 @@ export default class Login extends Component {
     login(this.email.value, this.pw.value)
       .catch((error) => {
         this.setState(this.setErrorMsg(error.message))
+    });
+  }
+
+ handleLogout = (e) => {
+    e.preventDefault();
+    logout()
+      .then(() => {
+        this.setState(this.setErrorMsg('logout successfully'))
     });
   }
 
@@ -47,6 +72,8 @@ export default class Login extends Component {
           }
           <button type="submit" className="btn btn-primary">Login</button>
           <Link className="btn btn-danger" to="/">Cancel</Link>
+          <button  className="btn btn-warning" onClick={this.handleLogout}>Logout</button>
+          
         </form>
       </div>
     )

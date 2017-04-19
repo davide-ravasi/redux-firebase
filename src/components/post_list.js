@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import PostItem from './post_item';
 import { Accordion, Panel } from 'react-bootstrap';
+import firebase from 'firebase';
 
 class PostList extends Component {
+
+  componentWillMount() {
+    actions.isConnected();
+  }
 
   singleCommand(el) {
       return _.map(el, ( command, key ) => {
