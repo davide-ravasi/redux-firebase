@@ -16,7 +16,6 @@ export default class Login extends Component {
 
   componentWillMount() {
     firebase.auth().onAuthStateChanged( user => {
-      console.log('user : ', user);
       if (user) {
         console.log('connected');
         this.context.router.push('/');
@@ -71,9 +70,7 @@ export default class Login extends Component {
             </div>
           }
           <button type="submit" className="btn btn-primary">Login</button>
-          <Link className="btn btn-danger" to="/">Cancel</Link>
-          <button  className="btn btn-warning" onClick={this.handleLogout}>Logout</button>
-          
+          <Link className="btn btn-danger" to="/">Cancel</Link>        
         </form>
       </div>
     )

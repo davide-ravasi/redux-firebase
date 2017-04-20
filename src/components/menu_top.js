@@ -18,7 +18,6 @@ class MenuTop extends Component {
 
     componentWillMount() {
         firebase.auth().onAuthStateChanged( user => {
-        console.log('user : ', user);
             if (user) {
                 console.log('connected');
                 this.setState({isLogged: true})
@@ -35,17 +34,24 @@ class MenuTop extends Component {
     }
 
     render() {
+        // check connection state to change login button
         let linkLog;
+        let newPost;
         console.log('state logged : ' , this.state.isLogged);
         if(this.state.isLogged) {
             linkLog = (
                 <li><button  className="btn btn-warning" onClick={this.handleLogout}>Logout</button></li>
             )
+            newPost = (
+                <li><Link to="/create">New</Link></li>
+            )
         } else {
             linkLog = (
                 <li><Link to="/login">Login</Link></li>
-            )            
+            )   
+            newPost = ""         
         }
+
         return (
             <nav className="navbar navbar-inverse navbar-fixed-top">
                 <div className="container">
@@ -60,7 +66,7 @@ class MenuTop extends Component {
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                     <ul className="nav navbar-nav">
-                        <li><Link to="/create">Edit</Link></li>
+                        {newPost}
                         { linkLog }
                     </ul>
                     </div>
